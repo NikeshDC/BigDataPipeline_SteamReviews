@@ -9,7 +9,7 @@ import threading
 from dateutil import parser as date_parser
 
 # Kafka Configuration
-KAFKA_SERVERS = 'ec2-44-192-38-38.compute-1.amazonaws.com:9092'
+KAFKA_SERVERS = 'localhost:9092'
 SOURCE_TOPIC = 'summary-results'
 
 
@@ -251,17 +251,17 @@ def update_popularity_graph(selected_metric, selected_year, selected_month, sele
         selected_data = summary_data.loc[(summary_data['time_year'] == selected_year) & 
                                          (summary_data['time_month'] == selected_month) & (summary_data['time_day'] == selected_day), :] 
 
+    # Sort the data by the selected metric
+    if sorted_popularity_data.size == 0:
+        return {}
+    
     sorted_popularity_data = selected_data[['app_name', selected_metric]] \
                                 .groupby(by=['app_name']) \
                                 .aggregate(agg_func) \
                                 .sort_values(by=selected_metric, ascending=False) \
                                 .reset_index()
 
-    # Sort the data by the selected metric
-    if sorted_popularity_data.size == 0:
-        return {}
-
-    metric_name = selected_metric.replace('A_', "Average").replace('T_', 'Total ')
+    metric_name = selected_metric.replace('A_', "Average ").replace('T_', 'Total ')
     # Popularity ranking plot
     popularity_fig = px.bar(
         sorted_popularity_data,

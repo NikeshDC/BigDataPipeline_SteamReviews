@@ -4,10 +4,10 @@ import time, random, json
 
 
 #configurations
-KAFKA_SERVERS = ['localhost:9092']
+KAFKA_SERVERS = 'localhost:9092'
 DESTINATION_TOPIC = 'reviews-stream'
 
-STREAM_BETWEEN_TIME = 5
+STREAM_BETWEEN_TIME = 0.01
 STREAM_TIME_RANDOM = .1 * STREAM_BETWEEN_TIME
 
 stream_datasource = 'sampled_steam_reviews_with_sentiment.csv'
