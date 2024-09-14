@@ -4,7 +4,7 @@ import pyspark.sql.functions as F
 
 
 # Kafka Configuration
-KAFKA_SERVERS = 'ec2-44-192-38-38.compute-1.amazonaws.com:9092'
+KAFKA_SERVERS = 'localhost:9092'
 STREAM_TOPIC = 'reviews-stream'  #the source kafka topic from where it will read new reviews as they are generated
 SUMMARY_TOPIC_TIME_WINDOWED = 'summary-results' #the destination kafka topic where this will update the summary results
 
