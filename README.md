@@ -1,4 +1,4 @@
-##Steps to try out this project:
+#Steps to try out this project:
 **Kafka**
 --create an ec2 with t2.small & ubuntu
 
@@ -14,13 +14,13 @@
 >>>>source myvenv/bin/activate
 
 --verify topics created
->>>> pgrep -f zookeeper
->>>> pgrep -f kafka.Kafka
->>>> bin/kafka-topics.sh --describe --topic summary-results --bootstrap-server localhost:9092
->>>> bin/kafka-topics.sh --describe --topic summary-results --bootstrap-server localhost:9092
+>> pgrep -f zookeeper
+>> pgrep -f kafka.Kafka
+>> bin/kafka-topics.sh --describe --topic summary-results --bootstrap-server localhost:9092
+>> bin/kafka-topics.sh --describe --topic summary-results --bootstrap-server localhost:9092
 
 --download the sample csv file
->>>>> wget --no-check-certificate 'https://drive.google.com/uc?export=download&id=1Hj7PSv7BMrDkJ6jfDpEOJZBl97TTGaS9' -O sampled_steam_reviews_with_sentiment.csv
+>> wget --no-check-certificate 'https://drive.google.com/uc?export=download&id=1Hj7PSv7BMrDkJ6jfDpEOJZBl97TTGaS9' -O sampled_steam_reviews_with_sentiment.csv
 
 --create the file stream_generator.py and upload contents
 
@@ -28,7 +28,7 @@
 
 
 
-###**Spark <summarizer>**
+**Spark <summarizer>**
 --create EMR cluster
 
 --add security rule to allow ssh and 8085 port for dash in the master node of the cluster
@@ -40,10 +40,10 @@
 --create file summarizer.py and upload contents, set kafka-servers' address (ec2 instance created in first step) inside the script
 
 --submit job to spark to run the summarizer.py
->>>> spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.2 summarizer.py
+>> spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.2 summarizer.py
 
 
-###**Dash <visualizer>**
+**Dash <visualizer>**
 --create file visualizer.py and upload contents, set kafka-servers' address inside the script
 
 --run the python file visualizer.py
