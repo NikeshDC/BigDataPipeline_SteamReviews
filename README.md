@@ -30,7 +30,7 @@ Steps to try out this project in AWS sandbox:
 
 
 
-**Spark <summarizer>**
+**Spark -- summarizer**
 
 --create EMR cluster
 
@@ -46,10 +46,10 @@ Steps to try out this project in AWS sandbox:
 >> spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.2 summarizer.py
 
 
-**Dash <visualizer>**
+**Dash -- visualizer**
 
 --create file visualizer.py and upload contents, set kafka-servers' address inside the script
 
 --run the python file visualizer.py
 
---go to browser and open link to the dash application (<spark-master-address>:8085)
+--go to browser and open link to the dash application ([spark-master-address]:8085)
