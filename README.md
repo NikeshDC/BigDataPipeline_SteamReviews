@@ -1,6 +1,7 @@
 Steps to try out this project:
 
 **Kafka**
+
 --create an ec2 with t2.small & ubuntu
 
 --add security rule to allow 9092 port for kafka producers/ consumers
@@ -30,6 +31,7 @@ Steps to try out this project:
 
 
 **Spark <summarizer>**
+
 --create EMR cluster
 
 --add security rule to allow ssh and 8085 port for dash in the master node of the cluster
@@ -45,6 +47,7 @@ Steps to try out this project:
 
 
 **Dash <visualizer>**
+
 --create file visualizer.py and upload contents, set kafka-servers' address inside the script
 
 --run the python file visualizer.py
