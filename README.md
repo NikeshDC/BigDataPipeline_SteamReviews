@@ -53,3 +53,5 @@ Steps to try out this project in AWS sandbox:
 --run the python file visualizer.py
 
 --go to browser and open link to the dash application ([spark-master-address]:8085)
+
+Video of these steps are available at: https://drive.google.com/file/d/1BYeF5wRmk-3_eVG2QJvsoaUsrVWQt3yZ/view?usp=drive_link
