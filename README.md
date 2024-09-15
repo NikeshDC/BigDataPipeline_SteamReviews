@@ -1,4 +1,5 @@
-#Steps to try out this project:
+Steps to try out this project:
+
 **Kafka**
 --create an ec2 with t2.small & ubuntu
 
