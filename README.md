@@ -1,4 +1,4 @@
-Steps to try out this project:
+Steps to try out this project in AWS sandbox:
 
 **Kafka**
 
